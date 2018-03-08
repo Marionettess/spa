@@ -1,27 +1,32 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>矩形计算器</title>
+  <title>rectangle</title>
   <link rel="stylesheet" href="rectangle.css">
-  <!--<script src=""></script>-->
   <script src="rectangle.js"></script>
+ 
 </head>
 <body>
-<div id="rectangle">
-  <label>宽度:</label>
-  <input id="rectangle-width" type="textbox"><span id="one"></span>
-  <br/>
-  <label>高度:</label>
-  <input id="rectangle-height" type="textbox"><span id="two"></span>
-  <br/>
-  <input id="rectangle-calc" type="button" value="计算" onclick="clickFun()">
-  <br/>
-  <label for="">周长:</label>
-  <input id="rectangle-perimeter" type="textbox">
-  <br/>
-  <label for="">面积:</label>
-  <input id="rectangle-area" type="textbox">
+<div class="rectangle">
+  <label for="">长度：</label>
+  <input id="rectangle__width" type="textbox">
+  <span class="col">*</span>
+  <div id="len"></div>
+  <br>
+  <label for="">宽度：</label>
+  <input id="rectangle__height" type="textbox">
+  <span class="col">*</span>
+  <div id="hei"></div>
+  <br>
+  <input id="rectangle__calc" type="button" value="计算" onclick="clickFun()">
+  <br>
+  <label for="">面积：</label>
+  <input id="rectangle__area" type="textbox">
+  <br>
+  <label for="">周长：</label>
+  <input id="rectangle__cir" type="textbox">
 </div>
 </body>
 </html>
