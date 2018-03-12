@@ -1,21 +1,25 @@
-var $btn,
-    i=10,
-    timer;
+var $progress,
+    timer = 0,
+    i = 0;
 
 $(function(){
-  $btn = $('input[type="button"]');
-  $btn.val('同意 (' + i + ' s)');
-  $btn.attr('disabled', 'disabled');
+  $progress = $('#dlProgress');
 
-  timer = window.setInterval(function(){
-    $btn.val('同意(' + i-- + 's)');
-    if(i === -1){
-      window.clearInterval(timer);
-      $btn.val('同意');
-      $btn.removeAttr('disabled');
+  $('#btnStart').click(function(){
+    if(timer !== 0){
+      return;
     }
-  }, 1000);
-  $btn.click(function(){
-    alert('lalala');
+    timer = window.setInterval(function(){
+      $progress.attr('value', i++);
+    },100);
+  });
+
+  $('#btnStop').click(function(){
+    window.clearInterval(timer);
+    timer = 0;
+  });
+
+  $('#btnReset').click(function(){
+    $progress.attr('value', i = 0);
   });
 });

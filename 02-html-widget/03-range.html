@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="01-button.css">
+  <link rel="stylesheet" href="03-range.css">
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="01-button.js"></script>
+  <script src="03-range.js"></script>
   <title></title>
 </head>
 <body>
-<div class="btn"> 
-  <input id="btn" type="button" value="同意" onclick="clickFun()">
-</div> 
+  <div class="box">
+    下载进度:
+    <progress id="dlProgress" value="0" max="100"></progress>
+    <br>
+    <br>
+    <button id="btnStart">开始</button>
+    <button id="btnStop">暂停</button>
+    <button id="btnReset">重置</button> 
+  </div>
 </body>
 </html>

@@ -1,8 +1,7 @@
-
-.btn{
-  margin:30px auto;
-  display: block;
-  font-size: 1.0rem;
-  width:200px;
-  height: 100px;
+#dlProgress{
+  width: 300px;
+}
+.box{
+  width:400px;
+  margin:20px auto;
 }
