@@ -1,0 +1,23 @@
+.rectangle{
+  margin: 30px auto;
+  width: 370px;
+
+}
+
+span{
+  color: red;
+}
+input, label, span{
+  margin: 5px 0; 
+  font-size: 1rem;
+}
+#rectangle-calc{
+  width: 70px;
+  margin-left:52.5px;
+}
+#wid, #hei{
+  font-size: 0.8rem;
+  color: red;
+  margin-left:52.5px;
+}
+
