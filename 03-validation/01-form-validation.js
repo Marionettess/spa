@@ -1,27 +1,19 @@
 $(function() {
   var $width = $('#rectangle-width'),
     $height = $('#rectangle-height'),
-    $calc = $('#rectangle-calc'),
-    blnValid = false;
+    $calc = $('#rectangle-calc');
 
   $calc.click(function() {
-    if(!blnValid) return;
+
+    if(!validate('#rectangle-width') || !validate('#rectangle-height')) return;
 
     var width = Number($width.val()),
       height = Number($height.val()),
-      p = roundFractional(width * 2 + height * 2, 2),
-      a = roundFractional(width * height, 2);
+      p = roundFra(width * 2 + height * 2, 2),
+      a = roundFra(width * height, 2);
 
     $('#rectangle-p').val(p);
     $('#rectangle-a').val(a);
-  });
-
-  $width.focusout(function() {
-    blnValid = validate('#rectangle-width');
-  });
-  
-  $height.focusout(function() {
-    blnValid = validate('#rectangle-height');
   });
   
   /**
@@ -31,7 +23,7 @@ $(function() {
    * @param n 小数点后第 n 位
    * @returns 近似处理后的数 
    */
-  function roundFractional(x, n) {
+  function roundFra(x, n) {
     return Math.round(x * Math.pow(10, n)) / Math.pow(10, n);
   }
 

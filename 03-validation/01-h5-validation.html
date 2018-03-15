@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>rectangle</title>
+  <link rel="stylesheet" href="01-h5-validation.css">
+  <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="rectangle">
+  <form action="">
+    <label for="">长度：</label>
+    <input id="rectangle-width" type="number" min="0" required step="0.01" autofocus>
+    <span class="col"></span>
+    <div id="rectangle-width-validate"></div>
+    <label for="">宽度：</label>
+    <input id="rectangle-height" type="number" min="0" required step="0.01">
+    <span class="col"></span>
+    <div id="rectangle-height-validate"></div> 
+    <input id="rectangle-calc" type="submit" value="计算">
+  </form>
+  <label for="">面积：</label>
+  <input id="rectangle-a" type="text" disabled>
+  <br>
+  <label for="">周长：</label>
+  <input id="rectangle-p" type="text" disabled>
+</div>
+<script src="01-h5-validation.js"></script>
+</body>
+</html>

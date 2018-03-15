@@ -2,26 +2,34 @@ $(function() {
   var $width = $('#rectangle-width'),
     $height = $('#rectangle-height'),
     $calc = $('#rectangle-calc'),
-    blnValid = false;
+    btnVa = false;
 
   $calc.click(function() {
-    if(!blnValid) return;
+    if(!btnVa) return;
 
     var width = Number($width.val()),
       height = Number($height.val()),
-      p = roundFractional(width * 2 + height * 2, 2),
-      a = roundFractional(width * height, 2);
+      p = roundFra(width * 2 + height * 2, 2),
+      a = roundFra(width * height, 2);
 
     $('#rectangle-p').val(p);
     $('#rectangle-a').val(a);
   });
 
+  $width.keypress(function(e){
+    vdKey(e);
+  });
+
+  $height.keypress(function(e){
+    vdKey(e);
+  });
+
   $width.focusout(function() {
-    blnValid = validate('#rectangle-width');
+    btnVa = validate('#rectangle-width');
   });
   
   $height.focusout(function() {
-    blnValid = validate('#rectangle-height');
+    btnVa = validate('#rectangle-height');
   });
   
   /**
@@ -31,9 +39,20 @@ $(function() {
    * @param n 小数点后第 n 位
    * @returns 近似处理后的数 
    */
-  function roundFractional(x, n) {
+  function roundFra(x, n) {
     return Math.round(x * Math.pow(10, n)) / Math.pow(10, n);
   }
+
+  /**
+   * 验证文本框中输入的每个字符
+   * 
+   * @param e 按键事件
+   * @returns {undefined}
+   */
+  function vdKey(e) {
+    if(/[abcdf-zABCDF-Z`~!@#$%^&*()=_+\[\]{}|;:'",<>/?\\]/.test(e.key)) e.preventDefault();
+  }
+
 
   /**
    * 对字段进行数据合法性校验
